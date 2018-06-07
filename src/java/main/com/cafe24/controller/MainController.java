@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
 	
 	@RequestMapping("/")
-	@ResponseBody
 	public String test() {
-		return "Welcome Hello Computer";
+		return "chat";
 	}
 	
 	@RequestMapping(value="/webhook", method=RequestMethod.GET)
