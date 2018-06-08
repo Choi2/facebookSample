@@ -11,17 +11,24 @@
 
 <title>JSP</title>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="http://cdn.sockjs.org/sockjs-0.3.4.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/sockjs-0.3.4.js"></script>
 
 <script type="text/javascript">
 
     $(document).ready(function() {
 
         $("#sendBtn").click(function() {
-
-            sendMessage();
-
+            sendMessage();	
+			$('#message').val('')
+        });
+        
+        $("#message").keydown(function (key) {
+            if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+            	sendMessage();
+            	$('#message').val('')
+            }
+     
         });
 
     });
